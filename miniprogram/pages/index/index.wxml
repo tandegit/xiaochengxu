@@ -1,32 +1,131 @@
-<!--index.wxml-->
 <view class="container">
-
-  <view class="title">快速了解云开发</view>
-
-  <view class="top_tip">免鉴权接口调用 免部署后台 高并发</view>
-
-  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
-    <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
-      <view class="power_info_text">
-        <view class="power_info_text_title">{{power.title}}</view>
-        <view class="power_info_text_tip">{{power.tip}}</view>
-      </view>
-      <image wx:if="{{!power.showItem}}" class="power_info_more" src="../../images/arrow.svg"></image>
-      <image wx:if="{{power.showItem}}" class="power_info_less" src="../../images/arrow.svg"></image>
+  <view class="header">
+    <view class="one">
+      <text>空气质量：{{airtext}}</text>
+      <text>地区：{{area}}-{{city}}</text>
     </view>
-    <view wx:if="{{power.showItem}}">
-      <view wx:key="title" wx:for="{{power.item}}">
-        <view class="line"></view>
-        <view class="power_item" bindtap="jumpPage" data-page="{{item.page}}">
-          <view class="power_item_title">{{item.title}}</view>
-          <image class="power_item_icon" src="../../images/arrow.svg"></image>
-        </view>
-      </view>
+    <view class="two">
+      <text>{{airValue}}-{{air_temp}}℃</text>
+      <text>{{weather}}</text>
+    </view>
+    <view class="three">
+      <text>ONENET: {{onenet}}</text>
+      <text>设备: {{shebei}}</text>
+    </view>
+    <view class="one">
+      <text style="padding-top: 15rpx;padding-bottom: 10rpx">未过25度不主动开空调</text>
     </view>
   </view>
 
-  <view class="environment" bindtap="onChangeShowEnvChoose">当前环境 {{ selectedEnv.alias }}</view>
+  <view class="body">
+    <view class="body-wrapper">
+      <view class="date">
+        <view class="date-logo">
+          <image src="/picture/wendu.png"></image>
+        </view>
+        <view class="date-text">
+          <view class="date-title">温度</view>
+          <view class="date-value">{{tempperature}}℃</view>
+        </view>
+      </view>
 
-  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+      <view class="date">
+        <view class="date-logo">
+          <image src="/picture/kongtiao.png"></image>
+        </view>
+        <view class="date-text">
+          <view class="date-title">空调开关</view>
+          <switch color="#3def9" checked="{{airFlag_checked}}" bindchange="onairFlagchange"></switch>
+        </view>
+      </view>
+    </view>
 
+    <view class="body-wrapper">
+      <view class="date">
+        <view class="date-logo">
+          <image src="/picture/Fridge-model.png"></image>
+        </view>
+        <view class="date-text">
+          <view class="date-title">空调{{model_str}}</view>
+          <switch color="#3def9" checked="{{mode_checked}}" color="#f14848" bindchange="onmodelchange"></switch>
+        </view>
+      </view>
+
+      <view class="date">
+        <view class="date-logo">
+          <image src="/picture/Fridge-model.png"></image>
+        </view>
+        <view class="date-text">
+          <view class="date-title">空调温度</view>
+          <view class="date-value">{{settemp}}℃</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="body-wrapper">
+      <view class="date">
+        <view class="date-logo">
+          <image src="/picture/settemp.png"></image>
+        </view>
+        <view class="date-text">
+          <button class="mini-btn" size="mini" bindtap="kongtiaotempdown">
+            <view style="font-family: 微软雅黑;font-size: 90%;">点击</view>
+            <view style="font-family: 微软雅黑;font-size: 90%;">调低温度</view>
+          </button>
+        </view>
+      </view>
+
+      <view class="date">
+        <view class="date-logo">
+          <image src="/picture/hot.png"></image>
+        </view>
+        <view class="date-text">
+          <button class="mini-btn" size="mini" bindtap="kongtiaotempup">
+            <view style="font-family: 微软雅黑;font-size: 90%;">点击</view>
+            <view style="font-family: 微软雅黑;font-size: 90%;">调高温度</view>
+          </button>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="body-wrapper">
+      <view class="date">
+        <view class="date-logo">
+          <image src="/picture/LED2.png"></image>
+        </view>
+        <view class="date-text">
+          <view class="date-title">卧室灯</view>
+          <switch color="#3def9" checked="{{LED1_checked}}" bindchange="onLED1change"></switch>
+        </view>
+      </view>
+      <view class="date">
+        <view class="date-logo">
+          <image src="/picture/LED1.png"></image>
+        </view>
+        <view class="date-text">
+          <view class="date-title">客厅灯</view>
+          <switch color="#3def9" checked="{{LED2_checked}}" bindchange="onLED2change"></switch>
+        </view>
+      </view>
+    </view>
+
+    <view class="body-wrapper">
+      <view class="date">
+        <view class="date-logo">
+          <image src="/picture/fanflag.png"></image>
+        </view>
+        <view class="date-text">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="date-title">点击调风档</view>
+            <view class="date-value">
+              {{array[index]}}档
+            </view>
+          </picker>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
 </view>

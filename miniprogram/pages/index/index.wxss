@@ -1,94 +1,88 @@
-/**index.wxss**/
 
-page {
-  padding-top: 54rpx;
-  background-color: #f6f6f6;
-  padding-bottom: 60rpx;
+.container{ 
+  padding: 20rpx;
 }
-
-.title {
-  font-family: PingFang SC;
-  font-weight: 500;
-  color: #000000;
-  font-size: 44rpx;
-  margin-bottom: 40rpx;
+.header{
+  background-color: #3d7ef9;
+  color: white;
+  padding: 15rpx 30rpx;
+  width: 85%;
+  border-radius: 20rpx;
+  box-shadow: #cfcfda 0 0 1rpx;
 }
-
-.top_tip {
-  font-size: 28rpx;
-  font-family: PingFang SC;
-  font-weight: 400;
-  color: #888888;
-  margin-bottom: 28rpx;
-}
-
-.power {
-  margin-top: 30rpx;
-  border-radius: 5px;
-  background-color: white;
-  width: 93%;
-  padding-bottom: 1rpx;
-}
-
-.power_info {
+.one{
   display: flex;
-  padding: 30rpx 25rpx;
-  align-items: center;
+  justify-content: space-between;
+}                  
+.one text{
+  font-size: 26rpx;
+  height: 30rpx;
+  padding-bottom: 15rpx;
+}
+.two{
+  display: flex;
+  justify-content: space-between;
+}
+.two text{
+  font-size: 52rpx;
+  padding-bottom: 15rpx;
+}
+
+.three{
+  display: flex;
   justify-content: space-between;
 }
 
-.power_info_more {
-  width: 30rpx;
-  height: 30rpx;
-  transform: rotate(90deg);
+.three text{
+  font-size: 22rpx;
 }
-
-.power_info_less {
-  width: 30rpx;
-  height: 30rpx;
-  transform: rotate(270deg);
+/*body*/
+.body-wrapper{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
 }
-
-.power_info_text {
+.date-logo image{
+  width: 107rpx;
+  height: 107rpx;
+}
+.date{
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  margin:0rpx 15rpx;
+  width: 300rpx;
+  height: 150rpx;
+  border-radius:40rpx ;
+  box-shadow: #b2b2b9 0 0 10rpx;
+  padding: 0 10rpx;
+}
+.date-logo{                                                                                     
+  display: flex;
+  align-items: center;
+}
+.date-text{
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+.date-value{
+  font-size: 45rpx;
 }
 
-.power_info_text_title {
-  margin-bottom: 10rpx;
-  font-weight: 400;
-  font-size: 35rpx;
+.settemp_css{
+  padding: 0%;
 }
 
-.power_info_text_tip {
-  color: rgba(0, 0, 0, 0.4);
-  font-size: 25rpx;
-}
-
-.power_item {
-  padding: 30rpx 25rpx;
+.settemp_css{
+  padding-top: 1rpx;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
-.power_item_title {
-  font-size: 30rpx;
-}
+.button{
 
-.power_item_icon {
-  width: 30rpx;
-  height: 30rpx;
-}
-
-.line {
-  width: 95%;
-  margin: 0 auto;
-  height: 2rpx;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.environment {
-  color: rgba(0, 0, 0, 0.4);
-  font-size: 24rpx;
-  margin-top: 25%;
+  display: flex;
+  flex-direction: row;
+  width:20%;
 }

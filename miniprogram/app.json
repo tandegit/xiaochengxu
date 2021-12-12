@@ -17,8 +17,13 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "老谭的测试",
     "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc":"你的位置信息将用于天气和位置接口的效果展示"
+    }
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
